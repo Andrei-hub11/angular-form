@@ -1,0 +1,66 @@
+.home {
+  &__grid {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 2rem;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    width: 29rem;
+    height: 38.6rem;
+    background: #201b1c;
+    border-radius: 1rem;
+    padding: 3rem;
+  }
+
+  &__card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  &__card-img {
+    margin: 0 auto;
+    width: 13.8rem;
+    height: 13.8rem;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
+    }
+  }
+
+  &__card-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 0.2rem;
+    font-family: "Dosis", sans-serif;
+  }
+}
+
+.btn {
+  font-family: "Dosis", sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 0.8rem 4rem;
+  border-radius: 2rem;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+  border: 0.2rem solid #b7001f;
+
+  &:hover {
+    background: #b7001f;
+    transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+  }
+}

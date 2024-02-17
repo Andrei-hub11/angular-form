@@ -1,0 +1,57 @@
+<section class="main">
+  <form
+    [formGroup]="form_Login"
+    action=""
+    class="form"
+    (ngSubmit)="submitForm()"
+  >
+    <h1 class="form__title">Login</h1>
+    <div class="form__container">
+      <div class="form__control">
+        <input
+          type="text"
+          id="email"
+          formControlName="email"
+          placeholder="Email"
+          class="form__input"
+          (ngModelChange)="validarEmail()"
+        />
+        <div
+          class="form__control-error"
+          [ngClass]="{
+            hidden:
+              !form_Login.get('email')?.hasError ||
+              !form_Login.get('email')?.dirty
+          }"
+        >
+          {{ errorMsgEmail ? errorMsgEmail : "O email é obrigatório" }}
+        </div>
+      </div>
+      <div class="form__control">
+        <input
+          type="text"
+          id="senha"
+          formControlName="senha"
+          placeholder="Sua senha"
+          class="form__input"
+          (ngModelChange)="validarSenha()"
+        />
+        <div
+          class="form__control-error"
+          [ngClass]="{
+            hidden:
+              !form_Login.get('senha')?.hasError ||
+              !form_Login.get('senha')?.dirty
+          }"
+        >
+          {{ errorMsgSenha ? errorMsgSenha : "A senha é obrigatória" }}
+        </div>
+      </div>
+    </div>
+    <div class="form__action">
+      <button class="form__btn" type="submit" [disabled]="!form_Login.valid">
+        Login
+      </button>
+    </div>
+  </form>
+</section>

@@ -1,0 +1,20 @@
+<section class="home">
+  <header class="home__nav"></header>
+  <div class="home__grid">
+    <div *ngFor="let user of users" class="home__card">
+      <div class="home__card-container">
+        <div class="home__card-img">
+          <img
+            [src]="user.avatar_url"
+            alt="{{ user.login }} avatar"
+            alt="profile-image"
+          />
+        </div>
+        <h1 class="home__card-title">{{ user.login }}</h1>
+      </div>
+      <a [href]="user.html_url" target="_blank" class="btn"
+        >Perfil do usuario</a
+      >
+    </div>
+  </div>
+</section>
